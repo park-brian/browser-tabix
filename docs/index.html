@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabix</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1>Tabix Demo</h1>
+      <p>Packages used:</p>
+      <ul>
+        <li>@gmod/tabix <small>(1.5.10)</small></li>
+        <li>@gmod/vcf <small>(5.0.10)</small></li>
+        <li>generic-filehandle <small>(3.0.1)</small></li>
+      </ul>
+
+      <form id="tabixForm" class="mb-3">
+
+        <div class="mb-3">
+          <label for="inputFileUrl">Input File Url</label>
+          <input type="text" id="inputFileUrl" name="inputFileUrl" class="form-control" placeholder="Input file" value="https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz" required  />
+        </div>
+
+        <div class="mb-3">
+          <label for="chromosome">Chromosome</label>
+          <input type="text" id="chromosome" name="chromosome" class="form-control" placeholder="Chromosome" value="1" required  />
+        </div>
+
+        <div class="mb-3">
+          <label for="startPosition">Start Position</label>
+          <input type="number" id="startPosition" name="startPosition" class="form-control" placeholder="Start Position" value="10000" required  />
+        </div>
+
+        <div class="mb-3">
+          <label for="endPosition">End Position</label>
+          <input type="number" id="endPosition" name="endPosition" class="form-control" placeholder="End Position" value="11000" required  />
+        </div>
+
+
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <pre id="results"></pre>
+    </div>
+
+    <script src="app.js"></script>
+    <script>new EventSource('/esbuild').addEventListener('change', () => location.reload())</script>
+  </body>
+</html>
