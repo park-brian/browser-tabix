@@ -1,5 +1,5 @@
 {
-  "name": "tabix-client-only",
+  "name": "browser-tabix",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
