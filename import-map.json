@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "https://esm.sh/v120/pako@1.0.11/es2022/pako.mjs": "https://esm.sh/pako@1.0.11?cjs-exports=Inflate,Z_SYNC_FLUSH&exports=Z_SYNC_FLUSH,Inflate"
+  }
+}

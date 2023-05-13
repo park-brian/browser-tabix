@@ -39,14 +39,20 @@
           <input type="number" id="endPosition" name="endPosition" class="form-control" placeholder="End Position" value="11000" required  />
         </div>
 
-
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
       </form>
 
       <pre id="results"></pre>
     </div>
 
-    <script src="app.js"></script>
-    <script>new EventSource('/esbuild').addEventListener('change', () => location.reload())</script>
+    <!-- Necessary workaround for source map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "https://esm.sh/v120/pako@1.0.11/es2022/pako.mjs": "https://esm.sh/pako@1.0.11?cjs-exports=Inflate,Z_SYNC_FLUSH&exports=Z_SYNC_FLUSH,Inflate"
+        }
+      }
+    </script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>
